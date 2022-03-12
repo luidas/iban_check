@@ -1,6 +1,5 @@
 import unittest
-
-from iban_check import algorithm
+import algorithm
 
 # got from: https://github.com/mdomke/schwifty/blob/master/tests/test_iban.py
 valid = [

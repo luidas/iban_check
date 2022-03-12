@@ -1,0 +1,11 @@
+<html>
+
+<body>
+   <form action="{{ url_for('upload') }}" method="post">
+      <h1>Enter comma or newline separated ibans:</h1>
+      <textarea rows="5" cols="80" name="ibans"></textarea>
+      <p><input type="submit" value="validate" /></p>
+   </form>
+</body>
+
+</html>

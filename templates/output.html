@@ -1,0 +1,15 @@
+<html>
+
+<head>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <ul>
+        {% for iban in ibans: %}
+        <li>{{ iban[0] + ": " + iban[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

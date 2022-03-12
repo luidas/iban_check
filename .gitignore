@@ -1,3 +1,6 @@
 __pycache__/
 .coverage
 .vscode/
+.vercel
+ibans_input.txt
+venv/

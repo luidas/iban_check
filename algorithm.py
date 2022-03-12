@@ -4,11 +4,11 @@ Provides some helper functions and a registry.
 """
 import json
 import string
-import os
 
-file_directory = os.path.dirname(__file__)
+from pathlib import Path
 
-with open(file_directory + "/iban_registry.json", encoding="utf8") as f:
+
+with open(Path("iban_registry.json"), encoding="utf8") as f:
     REGISTRY = json.load(f)
 
 
@@ -46,6 +46,12 @@ def convert_to_integer(iban: str) -> int:
 
 
 def validate_iban(iban: str) -> bool:
+    """
+    If length is valid:
+    1. Rearrange
+    2. Convert to integer
+    3. Return if mod 97 remainder is equal to 1
+    """
     return check_length(iban) and convert_to_integer(rearrange(iban)) % 97 == 1
 
 
