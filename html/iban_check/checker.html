@@ -37,13 +37,15 @@ def convert_user_input(user_input: str):
     Removes indents and spaces.
     Splits on newlines.
     Splits on commas.
-    Returns the flattned list.
+    Flattens the list.
+    Removes duplicates.
     &#34;&#34;&#34;
     no_whitespace = user_input.replace(&#34; &#34;, &#34;&#34;).replace(&#34;\t&#34;, &#34;&#34;)
     input_lines = no_whitespace.splitlines()
     comma_split = [line.split(&#34;,&#34;) for line in input_lines]
     ibans = [iban for sublist in comma_split for iban in sublist]
-    return ibans
+    ibans_unique = list(set(ibans))
+    return ibans_unique
 
 
 def check_input_file(file_path):
@@ -111,7 +113,8 @@ Uses algorithm to check all comma or newline separated values</p></div>
 <div class="desc"><p>Removes indents and spaces.
 Splits on newlines.
 Splits on commas.
-Returns the flattned list.</p></div>
+Flattens the list.
+Removes duplicates.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -121,13 +124,15 @@ Returns the flattned list.</p></div>
     Removes indents and spaces.
     Splits on newlines.
     Splits on commas.
-    Returns the flattned list.
+    Flattens the list.
+    Removes duplicates.
     &#34;&#34;&#34;
     no_whitespace = user_input.replace(&#34; &#34;, &#34;&#34;).replace(&#34;\t&#34;, &#34;&#34;)
     input_lines = no_whitespace.splitlines()
     comma_split = [line.split(&#34;,&#34;) for line in input_lines]
     ibans = [iban for sublist in comma_split for iban in sublist]
-    return ibans</code></pre>
+    ibans_unique = list(set(ibans))
+    return ibans_unique</code></pre>
 </details>
 </dd>
 </dl>
