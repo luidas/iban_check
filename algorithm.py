@@ -22,8 +22,7 @@ def check_length(iban: str) -> bool:
     country_code = iban[0:2]
     if country_code in REGISTRY.keys():
         return REGISTRY[country_code]["iban_length"] == len(iban)
-    else:
-        return False
+    return False
 
 
 def rearrange(iban: str) -> str:
@@ -56,17 +55,30 @@ def validate_iban(iban: str) -> bool:
 
 
 def replace_check_digits(iban: str) -> str:
+    """Returns iban with 00 as country code"""
     return iban[0:2] + "00" + iban[4:]
 
 
 def calculate_check_digits(iban: str) -> int:
+    """
+    1. Make country code 00
+    2. Move first 4 characters to the end
+    3. Return the difference between 98 and the remainder of mod 97
+    """
     return 98 - (
         convert_to_integer(rearrange(replace_check_digits(iban))) % 97
     )
 
 
 def check_iban(iban: str) -> bool:
-    if type(iban) is not str:
+    """
+    1. Check if iban is string
+    2. Remove all spaces
+    3. Check if characters at check digit position are digits
+    4. Calculate check digits
+    5. Return True if iban is valid and calculated check digits = check digits
+    """
+    if not isinstance(iban, str):
         return False
     iban = iban.replace(" ", "")  # Parse
     check_digits = iban[2:4]

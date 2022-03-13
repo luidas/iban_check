@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>iban_check.test_iban_check API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>iban_check.test_iban_check</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import unittest
+import algorithm
+
+# got from: https://github.com/mdomke/schwifty/blob/master/tests/test_iban.py
+valid = [
+    &#34;AL47 2121 1009 0000 0002 3569 8741&#34;,  # Albania
+    &#34;AD12 0001 2030 2003 5910 0100&#34;,  # Andorra
+    &#34;AT61 1904 3002 3457 3201&#34;,  # Austria
+    &#34;AZ21 NABZ 0000 0000 1370 1000 1944&#34;,  # Republic of Azerbaijan
+    &#34;BH67 BMAG 0000 1299 1234 56&#34;,  # Bahrain (Kingdom of)
+    &#34;BE68 5390 0754 7034&#34;,  # Belgium
+    &#34;BA39 1290 0794 0102 8494&#34;,  # Bosnia and Herzegovina
+    &#34;BR97 0036 0305 0000 1000 9795 493P 1&#34;,  # Brazil
+    &#34;BR18 0000 0000 1414 5512 3924 100C 2&#34;,  # Brazil
+    &#34;BG80 BNBG 9661 1020 3456 78&#34;,  # Bulgaria
+    &#34;CR05 0152 0200 1026 2840 66&#34;,  # Costa Rica
+    &#34;HR12 1001 0051 8630 0016 0&#34;,  # Croatia
+    &#34;CY17 0020 0128 0000 0012 0052 7600&#34;,  # Cyprus
+    &#34;CZ65 0800 0000 1920 0014 5399&#34;,  # Czech Republic
+    &#34;CZ94 5500 0000 0010 1103 8930&#34;,  # Czech Republic
+    &#34;DK50 0040 0440 1162 43&#34;,  # Greenland
+    &#34;FO62 6460 0001 6316 34&#34;,  # Faroer
+    &#34;GL89 6471 0001 0002 06&#34;,  # Denmark
+    &#34;DO28 BAGR 0000 0001 2124 5361 1324&#34;,  # Dominican Republic
+    &#34;EE38 2200 2210 2014 5685&#34;,  # Estonia
+    &#34;FI21 1234 5600 0007 85&#34;,  # Finland
+    &#34;FR14 2004 1010 0505 0001 3M02 606&#34;,  # France
+    &#34;GE29 NB00 0000 0101 9049 17&#34;,  # Georgia
+    &#34;DE89 3704 0044 0532 0130 00&#34;,  # Germany
+    &#34;GI75 NWBK 0000 0000 7099 453&#34;,  # Gibraltar
+    &#34;GR16 0110 1250 0000 0001 2300 695&#34;,  # Greece
+    &#34;GT82 TRAJ 0102 0000 0012 1002 9690&#34;,  # Guatemala
+    &#34;HU42 1177 3016 1111 1018 0000 0000&#34;,  # Hungary
+    &#34;IS14 0159 2600 7654 5510 7303 39&#34;,  # Iceland
+    &#34;IE29 AIBK 9311 5212 3456 78&#34;,  # Ireland
+    &#34;IL62 0108 0000 0009 9999 999&#34;,  # Israel
+    &#34;IT60 X054 2811 1010 0000 0123 456&#34;,  # Italy
+    &#34;JO94 CBJO 0010 0000 0000 0131 0003 02&#34;,  # Jordan
+    &#34;KZ86 125K ZT50 0410 0100&#34;,  # Kazakhstan
+    &#34;XK05 1212 0123 4567 8906&#34;,  # Republic of Kosovo
+    &#34;KW81 CBKU 0000 0000 0000 1234 5601 01&#34;,  # Kuwait
+    &#34;LV80 BANK 0000 4351 9500 1&#34;,  # Latvia
+    &#34;LB62 0999 0000 0001 0019 0122 9114&#34;,  # Lebanon
+    &#34;LI21 0881 0000 2324 013A A&#34;,  # Liechtenstein (Principality of)
+    &#34;LT12 1000 0111 0100 1000&#34;,  # Lithuania
+    &#34;LU28 0019 4006 4475 0000&#34;,  # Luxembourg
+    &#34;MK07 2501 2000 0058 984&#34;,  # Macedonia, Former Yugoslav Republic of
+    &#34;MT84 MALT 0110 0001 2345 MTLC AST0 01S&#34;,  # Malta
+    &#34;MR13 0002 0001 0100 0012 3456 753&#34;,  # Mauritania
+    &#34;MU17 BOMM 0101 1010 3030 0200 000M UR&#34;,  # Mauritius
+    &#34;MD24 AG00 0225 1000 1310 4168&#34;,  # Moldova
+    &#34;MC58 1122 2000 0101 2345 6789 030&#34;,  # Monaco
+    &#34;ME25 5050 0001 2345 6789 51&#34;,  # Montenegro
+    &#34;NL91 ABNA 0417 1643 00&#34;,  # The Netherlands
+    &#34;NO93 8601 1117 947&#34;,  # Norway
+    &#34;PK36 SCBL 0000 0011 2345 6702&#34;,  # Pakistan
+    &#34;PS92 PALS 0000 0000 0400 1234 5670 2&#34;,  # Palestine, State of
+    &#34;PL61 1090 1014 0000 0712 1981 2874&#34;,  # Poland
+    &#34;PT50 0002 0123 1234 5678 9015 4&#34;,  # Portugal
+    &#34;QA58 DOHB 0000 1234 5678 90AB CDEF G&#34;,  # Qatar
+    &#34;RO49 AAAA 1B31 0075 9384 0000&#34;,  # Romania
+    &#34;SM86 U032 2509 8000 0000 0270 100&#34;,  # San Marino
+    &#34;ST68 0001 0001 0051 8453 1011 2&#34;,  # Sao Tome And Principe
+    &#34;SA03 8000 0000 6080 1016 7519&#34;,  # Saudi Arabia
+    &#34;RS35 2600 0560 1001 6113 79&#34;,  # Serbia
+    &#34;SK31 1200 0000 1987 4263 7541&#34;,  # Slovak Republic
+    &#34;SI56 1910 0000 0123 438&#34;,  # Slovenia
+    &#34;ES91 2100 0418 4502 0005 1332&#34;,  # Spain
+    &#34;SE45 5000 0000 0583 9825 7466&#34;,  # Sweden
+    &#34;CH93 0076 2011 6238 5295 7&#34;,  # Switzerland
+    &#34;TL38 0080 0123 4567 8910 157&#34;,  # Timor-Leste
+    &#34;TN59 1000 6035 1835 9847 8831&#34;,  # Tunisia
+    &#34;TR33 0006 1005 1978 6457 8413 26&#34;,  # Turkey
+    &#34;UA21 3996 2200 0002 6007 2335 6600 1&#34;,  # Ukraine
+    &#34;AE07 0331 2345 6789 0123 456&#34;,  # United Arab Emirates
+    &#34;GB29 NWBK 6016 1331 9268 19&#34;,  # United Kingdom
+    &#34;VG96 VPVG 0000 0123 4567 8901&#34;,  # Virgin Islands, British
+    &#34;BY13 NBRB 3600 9000 0000 2Z00 AB00&#34;,  # Republic of Belarus
+    &#34;SV62 CENR 0000 0000 0000 0070 0025&#34;,  # El Salvador
+    &#34;FO62 6460 0001 6316 34&#34;,  # Faroe Islands
+    &#34;GL89 6471 0001 0002 06&#34;,  # Grenland
+    &#34;IQ98 NBIQ 8501 2345 6789 012&#34;,  # Iraq
+]
+
+invalid = [
+    &#34;DE89 3704 0044 0532 0130&#34;,  # Too short
+    &#34;DE89 3704 0044 0532 0130 0000&#34;,  # Too long
+    &#34;GB96 BARC 2020 1530 0934 591&#34;,  # Too long
+    &#34;XX89 3704 0044 0532 0130 00&#34;,  # Wrong country-code
+    &#34;DE99 3704 0044 0532 0130 00&#34;,  # Wrong check digits
+    &#34;DEAA 3704 0044 0532 0130 00&#34;,  # Wrong format (check digits)
+    &#34;GB2L ABBY 0901 2857 2017 07&#34;,  # Wrong format (check digits)
+    &#34;DE89 AA04 0044 0532 0130 00&#34;,  # Wrong format (country specific)
+    &#34;GB01 BARC 2071 4583 6083 87&#34;,  # Wrong checksum digits
+    &#34;GB00 HLFX 1101 6111 4553 65&#34;,  # Wrong checksum digits
+    &#34;GB94 BARC 2020 1530 0934 59&#34;,  # Wrong checksum digits
+]
+
+wrong_type = [None, True, 0, 0.0, [], ()]
+
+
+class TestIbanCheck(unittest.TestCase):
+    def test_valid_ibans(self):
+        &#34;&#34;&#34;
+        Test that it can find a valid iban
+        &#34;&#34;&#34;
+        for iban in valid:
+            with self.subTest():
+                self.assertTrue(algorithm.check_iban(iban))
+
+    def test_invalid_ibans(self):
+        &#34;&#34;&#34;
+        Test that it can find an invalid iban
+        &#34;&#34;&#34;
+        for iban in invalid:
+            with self.subTest():
+                self.assertFalse(algorithm.check_iban(iban))
+
+    def test_wrong_type(self):
+        &#34;&#34;&#34;
+        Test that it doesn&#39;t accept wrong types
+        &#34;&#34;&#34;
+        for iban in wrong_type:
+            with self.subTest():
+                self.assertFalse(algorithm.check_iban(iban))
+
+
+if __name__ == &#34;__main__&#34;:
+    unittest.main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="iban_check.test_iban_check.TestIbanCheck"><code class="flex name class">
+<span>class <span class="ident">TestIbanCheck</span></span>
+<span>(</span><span>methodName='runTest')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class whose instances are single test cases.</p>
+<p>By default, the test code itself should be placed in a method named
+'runTest'.</p>
+<p>If the fixture may be used for many test cases, create as
+many test methods as are needed. When instantiating such a TestCase
+subclass, specify in the constructor arguments the name of the test method
+that the instance is to execute.</p>
+<p>Test authors should subclass TestCase for their own tests. Construction
+and deconstruction of the test's environment ('fixture') can be
+implemented by overriding the 'setUp' and 'tearDown' methods respectively.</p>
+<p>If it is necessary to override the <strong>init</strong> method, the base class
+<strong>init</strong> method must always be called. It is important that subclasses
+should not change the signature of their <strong>init</strong> method, since instances
+of the classes are instantiated automatically by parts of the framework
+in order to be run.</p>
+<p>When subclassing TestCase, you can set these attributes:
+* failureException: determines which exception will be raised when
+the instance's assertion methods fail; test methods raising this
+exception will be deemed to have 'failed' rather than 'errored'.
+* longMessage: determines whether long messages (including repr of
+objects used in assert methods) will be printed on failure in <em>addition</em>
+to any explicit message passed.
+* maxDiff: sets the maximum length of a diff in failure messages
+by assert methods using difflib. It is looked up as an instance
+attribute so can be configured by individual tests if required.</p>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestIbanCheck(unittest.TestCase):
+    def test_valid_ibans(self):
+        &#34;&#34;&#34;
+        Test that it can find a valid iban
+        &#34;&#34;&#34;
+        for iban in valid:
+            with self.subTest():
+                self.assertTrue(algorithm.check_iban(iban))
+
+    def test_invalid_ibans(self):
+        &#34;&#34;&#34;
+        Test that it can find an invalid iban
+        &#34;&#34;&#34;
+        for iban in invalid:
+            with self.subTest():
+                self.assertFalse(algorithm.check_iban(iban))
+
+    def test_wrong_type(self):
+        &#34;&#34;&#34;
+        Test that it doesn&#39;t accept wrong types
+        &#34;&#34;&#34;
+        for iban in wrong_type:
+            with self.subTest():
+                self.assertFalse(algorithm.check_iban(iban))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="iban_check.test_iban_check.TestIbanCheck.test_invalid_ibans"><code class="name flex">
+<span>def <span class="ident">test_invalid_ibans</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test that it can find an invalid iban</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_invalid_ibans(self):
+    &#34;&#34;&#34;
+    Test that it can find an invalid iban
+    &#34;&#34;&#34;
+    for iban in invalid:
+        with self.subTest():
+            self.assertFalse(algorithm.check_iban(iban))</code></pre>
+</details>
+</dd>
+<dt id="iban_check.test_iban_check.TestIbanCheck.test_valid_ibans"><code class="name flex">
+<span>def <span class="ident">test_valid_ibans</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test that it can find a valid iban</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_valid_ibans(self):
+    &#34;&#34;&#34;
+    Test that it can find a valid iban
+    &#34;&#34;&#34;
+    for iban in valid:
+        with self.subTest():
+            self.assertTrue(algorithm.check_iban(iban))</code></pre>
+</details>
+</dd>
+<dt id="iban_check.test_iban_check.TestIbanCheck.test_wrong_type"><code class="name flex">
+<span>def <span class="ident">test_wrong_type</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test that it doesn't accept wrong types</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_wrong_type(self):
+    &#34;&#34;&#34;
+    Test that it doesn&#39;t accept wrong types
+    &#34;&#34;&#34;
+    for iban in wrong_type:
+        with self.subTest():
+            self.assertFalse(algorithm.check_iban(iban))</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="iban_check" href="index.html">iban_check</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="iban_check.test_iban_check.TestIbanCheck" href="#iban_check.test_iban_check.TestIbanCheck">TestIbanCheck</a></code></h4>
+<ul class="">
+<li><code><a title="iban_check.test_iban_check.TestIbanCheck.test_invalid_ibans" href="#iban_check.test_iban_check.TestIbanCheck.test_invalid_ibans">test_invalid_ibans</a></code></li>
+<li><code><a title="iban_check.test_iban_check.TestIbanCheck.test_valid_ibans" href="#iban_check.test_iban_check.TestIbanCheck.test_valid_ibans">test_valid_ibans</a></code></li>
+<li><code><a title="iban_check.test_iban_check.TestIbanCheck.test_wrong_type" href="#iban_check.test_iban_check.TestIbanCheck.test_wrong_type">test_wrong_type</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
