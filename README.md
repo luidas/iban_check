@@ -26,7 +26,7 @@ No need to install anything. Just visit [https://iban-check.herokuapp.com/](http
 ### Command line checker/development server
 1. Install Python
 2. Install pip
-3. Run `pip: -r requirements.txt`
+3. Run `pip install -r requirements.txt`
 
 ## Usage
 When entering a list, separate IBANs by comma/newline.
@@ -37,7 +37,8 @@ When entering a list, separate IBANs by comma/newline.
 ### Command line
 1. Enter the IBAN list to a file (such as txt or csv).
 2. Run `python checker.py example_path.txt`.
-
+### Tests
+Run `python -m unittest` from the project root.
 
 ## Information on modules and functions
 To open the documentation generated from docstrings open [the index page](html/iban_check/index.html) in your browser. For example run: `firefox html/iban_check/index.html`.

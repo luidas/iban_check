@@ -60,7 +60,6 @@ def upload():
     user_input = request.form[&#34;input&#34;]
     with open(&#34;ibans_input.txt&#34;, mode=&#34;w&#34;, encoding=&#34;utf8&#34;) as file:
         file.write(user_input)
-        file.close()
     return redirect(url_for(&#34;output&#34;))
 
 
@@ -131,7 +130,6 @@ def upload():
     user_input = request.form[&#34;input&#34;]
     with open(&#34;ibans_input.txt&#34;, mode=&#34;w&#34;, encoding=&#34;utf8&#34;) as file:
         file.write(user_input)
-        file.close()
     return redirect(url_for(&#34;output&#34;))</code></pre>
 </details>
 </dd>

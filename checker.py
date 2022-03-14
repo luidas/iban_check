@@ -27,7 +27,6 @@ def check_input_file(file_path):
     """
     with open(file_path, mode="r", encoding="utf8") as file:
         user_input = file.read()
-        file.close()
     ibans = convert_user_input(user_input)
     checked_ibans = [
         (iban, "valid" if algorithm.check_iban(iban) else "invalid")

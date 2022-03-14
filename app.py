@@ -31,7 +31,6 @@ def upload():
     user_input = request.form["input"]
     with open("ibans_input.txt", mode="w", encoding="utf8") as file:
         file.write(user_input)
-        file.close()
     return redirect(url_for("output"))
 
 
